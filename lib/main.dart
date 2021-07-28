@@ -65,27 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
     {'title': 'ss435ss', 'score': 25},
   ];
 
-  Widget _menuItem(String title) {
-    return GestureDetector(
-      child: Container(
-          padding: EdgeInsets.all(8.0),
-          decoration: new BoxDecoration(
-              border: new Border(
-                  bottom: BorderSide(width: 1.0, color: Colors.grey))),
-          child: Row(
-            children: <Widget>[
-              Text(
-                title,
-                style: TextStyle(color: Colors.black, fontSize: 18.0),
-              ),
-            ],
-          )),
-      onTap: () {
-        print("onTap called.");
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemCount: _listData.length,
                 itemBuilder: (BuildContext context, int index) {
                   return ListTile(
-                    title: Text("* " + _listData[index].toString()),
+                    title: Text("* " + _listData[index]['score'].toString()),
                   );
                 })));
   }
